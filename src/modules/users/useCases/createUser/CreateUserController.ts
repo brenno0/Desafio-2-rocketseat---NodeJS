@@ -11,7 +11,7 @@ class CreateUserController {
    
       this.createUserUseCase.execute({ name,email })
    
-      return response.status(201).send()
+      return response.status(201).json({name:name, email:email, admin:false}).send()
     }
     catch(err) {
       return response.status(400).json({error: err})

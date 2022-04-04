@@ -43,7 +43,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): User {
-    if(receivedUser.admin === false){
+    if(!receivedUser.admin){
       receivedUser.admin = true
       receivedUser.updated_at = new Date();
       return receivedUser; 
